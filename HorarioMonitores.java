@@ -6,6 +6,8 @@ import java.io.File;
 public class HorarioMonitores {
 
 
+	private int tiempoDisponible = 0;
+	private int cantidadMonitores = 0;
 
 	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
@@ -33,9 +35,19 @@ public class HorarioMonitores {
  
 				String sCurrentLine;// String Linea actual
 	 
-				while ((sCurrentLine = bufersito.readLine()) != null) {
+				/*while 
+				((sCurrentLine = bufersito.readLine()) != null) {
 					System.out.println(sCurrentLine);
+				}*/
+				cantidadMonitores = Integer.parseInt(bufersito.readLine());// lo convierto en entero para poder usarlo
+				System.out.println("La Cantidad de monitores leida es: " + cantidadMonitores);
+
+				//ahora para leer las siguiente n lineas con los monitores
+				for (int i=0; i< cantidadMonitores; i++) {
+					sCurrentLine = bufersito.readLine();
+					System.out.println("El monitor leido es: " + sCurrentLine);					
 				}
+
  
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -44,10 +56,11 @@ public class HorarioMonitores {
 
 	public boolean verifciarCruce(){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
 
+		return false;
 	}
 
 	public void permutarEntrada(){
-		
+
 	}
 
 }
