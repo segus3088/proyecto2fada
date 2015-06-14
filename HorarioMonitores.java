@@ -8,6 +8,9 @@ public class HorarioMonitores {
 
 	private int tiempoDisponible = 0;
 	private int cantidadMonitores = 0;
+	private int[] respuestaTemporal;// este lo uso para guardar la posición de los proibles monnitreos que puede servir
+
+	private Monitores[] monitoresTurnos;
 
 	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
@@ -42,10 +45,21 @@ public class HorarioMonitores {
 				cantidadMonitores = Integer.parseInt(bufersito.readLine());// lo convierto en entero para poder usarlo
 				System.out.println("La Cantidad de monitores leida es: " + cantidadMonitores);
 
+				//Crear el array de Monitores
+				monitoresTurnos = new Monitores[cantidadMonitores];
+
 				//ahora para leer las siguiente n lineas con los monitores
 				for (int i=0; i< cantidadMonitores; i++) {
 					sCurrentLine = bufersito.readLine();
-					System.out.println("El monitor leido es: " + sCurrentLine);					
+					//System.out.println("El monitor leido es: " + sCurrentLine);	
+
+					//Ingresando los datos del monitor
+					String[] partesLines = sCurrentLine.split(" ");
+					monitoresTurnos[i].setNombre(partesLines[0]);
+					monitoresTurnos[i].setHoraInicio(Integer.parseInt(partesLines[1]));
+					monitoresTurnos[i].setHoraFin(Integer.parseInt(partesLines[2]));
+					monitoresTurnos[i].setTotalTurno();
+					//Se finaliza el procezamiento del archivo		
 				}
 
  
