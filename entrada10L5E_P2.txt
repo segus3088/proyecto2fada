@@ -1,0 +1,11 @@
+5 10
+Libro1 84
+Libro2 62
+Libro3 33
+Libro4 45
+Libro5 60
+Libro6 70
+Libro7 98
+Libro8 82
+Libro9 53
+Libro10 70
