@@ -59,7 +59,7 @@ public class HorarioMonitores {
 		return false;
 	}
 
-	public void permutarEntrada(){
+	public void permutarEntrada(){//hay que generar una permutación n!
 
 	}
 

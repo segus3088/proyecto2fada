@@ -1,0 +1,6 @@
+5
+Laura 0 8
+Andres 5 12
+Camilo 11 22
+Sandra 12 24
+Jhon 22 24
