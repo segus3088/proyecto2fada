@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+
 public class HorarioMonitores {
 
 	public static void main(String argEntrada[]){
@@ -17,6 +22,12 @@ public class HorarioMonitores {
 		System.out.println(nombreArchivo);
 
 		HorarioMonitores arrancar = new HorarioMonitores();	
+
+		arrancar.leerArchivo(nombreArchivo);
+	}
+
+	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
+		
 	}
 
 }
