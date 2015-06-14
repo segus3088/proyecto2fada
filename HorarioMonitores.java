@@ -54,12 +54,20 @@ public class HorarioMonitores {
 					//System.out.println("El monitor leido es: " + sCurrentLine);	
 
 					//Ingresando los datos del monitor
-					String[] partesLines = sCurrentLine.split(" ");
-					monitoresTurnos[i].setNombre(partesLines[0]);
-					monitoresTurnos[i].setHoraInicio(Integer.parseInt(partesLines[1]));
-					monitoresTurnos[i].setHoraFin(Integer.parseInt(partesLines[2]));
-					monitoresTurnos[i].setTotalTurno();
-					//Se finaliza el procezamiento del archivo		
+					String[] partesLines = sCurrentLine.split(" ");			
+
+					
+					Monitores objetoTemporal = new Monitores();
+					objetoTemporal.setNombre(partesLines[0]);
+					objetoTemporal.setHoraInicio(Integer.parseInt(partesLines[1]));
+					objetoTemporal.setHoraFin(Integer.parseInt(partesLines[2]));
+					objetoTemporal.setTotalTurno();
+
+					monitoresTurnos[i] = objetoTemporal;
+					
+				
+					//Se finaliza el procezamiento del archivo
+					System.out.println("El nombre es: "+ monitoresTurnos[i].getNombre() + " Empieza a las " + monitoresTurnos[i].getHoraInicio() + "h y dura " +  monitoresTurnos[i].getTotalTurno());		
 				}
 
  
