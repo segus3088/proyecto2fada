@@ -3,10 +3,14 @@
     puts "Ingrese datos"
     puts 'Escriba "fin" para terminar'
     loop do
-      nextline = gets.chomp
-      arr << nextline
-      break if nextline == "fin"
-      break if nextline == ""
+      arr = gets.chomp
+      #arr << nextline
+      if arr == ""
+        arr.size == 0
+      end
+      break if arr == "fin"
+      break if arr == ""
+      break if arr == nil
     end
 
     if arr.size == 0
