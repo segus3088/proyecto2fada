@@ -42,4 +42,12 @@ public class HorarioMonitores {
 			} 
 	}
 
+	public boolean verifciarCruce(){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
+
+	}
+
+	public void permutarEntrada(){
+		
+	}
+
 }
