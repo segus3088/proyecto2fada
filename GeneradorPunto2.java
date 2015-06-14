@@ -3,6 +3,11 @@ import java.util.Random;
 public final class GeneradorPunto2 {
 
 	public static void main(String[] args) {// el uso sera $java GeneradorPunto2 cantidadEscritores cantidadLibros
+
+		if(args.length != 2){
+			System.out.println("Recuerde que se usa es $java GeneradorPunto2 cantidadEscritores cantidadLibros");
+			System.exit(0);
+		}
 		
 		GeneradorPunto2 normalR = new GeneradorPunto2();
 		int cantidadEscritores; //Cantidad de Datos a generar en ese caso la cantidad de libros
