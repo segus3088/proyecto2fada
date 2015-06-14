@@ -5,6 +5,8 @@ import java.io.File;
 
 public class HorarioMonitores {
 
+
+	
 	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
 		if(argEntrada.length == 0){
@@ -19,7 +21,7 @@ public class HorarioMonitores {
 
 		String nombreArchivo = argEntrada[0];
 
-		System.out.println(nombreArchivo);
+		//System.out.println(nombreArchivo);
 
 		HorarioMonitores arrancar = new HorarioMonitores();	
 
@@ -27,7 +29,18 @@ public class HorarioMonitores {
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
-		
+				try (BufferedReader br = new BufferedReader(new FileReader(nEntrada)))
+		{
+ 
+			String sCurrentLine;
+ 
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+			}
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 	}
 
 }
