@@ -29,12 +29,16 @@ public class Escritores {
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
-			try (BufferedReader br = new BufferedReader(new FileReader(nEntrada))){
+			try (BufferedReader bufercito = new BufferedReader(new FileReader(nEntrada))){
  
-				String sCurrentLine;
+				String sCurrentLine;//String Linea Actual
+				int largoLinea;
 	 
-				while ((sCurrentLine = br.readLine()) != null) {
+				while ((sCurrentLine = bufercito.readLine()) != null) {
 					System.out.println(sCurrentLine);
+					largoLinea = sCurrentLine.length();
+
+					System.out.println(largoLinea);
 				}
  
 			} catch (IOException e) {

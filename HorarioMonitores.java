@@ -29,11 +29,11 @@ public class HorarioMonitores {
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
-			try (BufferedReader br = new BufferedReader(new FileReader(nEntrada))){
+			try (BufferedReader bufersito = new BufferedReader(new FileReader(nEntrada))){
  
-				String sCurrentLine;
+				String sCurrentLine;// String Linea actual
 	 
-				while ((sCurrentLine = br.readLine()) != null) {
+				while ((sCurrentLine = bufersito.readLine()) != null) {
 					System.out.println(sCurrentLine);
 				}
  
