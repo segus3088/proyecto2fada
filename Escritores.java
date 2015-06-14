@@ -3,11 +3,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 
-public class HorarioMonitores {
+public class Escritores {
 
 
 
-	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
+	public static void main(String argEntrada[]){// la manera de usarlo es java Escritores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
 		if(argEntrada.length == 0){
 			System.out.println("No puede ser vacio");
@@ -23,7 +23,7 @@ public class HorarioMonitores {
 
 		//System.out.println(nombreArchivo);
 
-		HorarioMonitores arrancar = new HorarioMonitores();	
+		Escritores arrancar = new Escritores();	
 
 		arrancar.leerArchivo(nombreArchivo);
 	}
