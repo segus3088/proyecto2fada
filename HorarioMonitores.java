@@ -5,7 +5,7 @@ import java.io.File;
 
 public class HorarioMonitores {
 
-	public static void main(String argEntrada[]){
+	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
 		if(argEntrada.length == 0){
 			System.out.println("No puede ser vacio");
