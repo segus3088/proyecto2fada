@@ -43,7 +43,7 @@ public class HorarioMonitores {
 					System.out.println(sCurrentLine);
 				}*/
 				cantidadMonitores = Integer.parseInt(bufersito.readLine());// lo convierto en entero para poder usarlo
-				System.out.println("La Cantidad de monitores leida es: " + cantidadMonitores);
+				//System.out.println("La Cantidad de monitores leida es: " + cantidadMonitores);
 
 				//Crear el array de Monitores
 				monitoresTurnos = new Monitores[cantidadMonitores];
@@ -67,7 +67,7 @@ public class HorarioMonitores {
 					
 				
 					//Se finaliza el procezamiento del archivo
-					System.out.println("El nombre es: "+ monitoresTurnos[i].getNombre() + " Empieza a las " + monitoresTurnos[i].getHoraInicio() + "h y dura " +  monitoresTurnos[i].getTotalTurno());		
+					//System.out.println("El nombre es: "+ monitoresTurnos[i].getNombre() + " Empieza a las " + monitoresTurnos[i].getHoraInicio() + "h y dura " +  monitoresTurnos[i].getTotalTurno());		
 				}
 
  
