@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+import java.util.*;
 
 public class HorarioMonitores {
 
@@ -31,6 +32,8 @@ public class HorarioMonitores {
 		HorarioMonitores arrancar = new HorarioMonitores();	
 
 		arrancar.leerArchivo(nombreArchivo);
+		arrancar.permutarEntrada();
+
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
@@ -82,6 +85,15 @@ public class HorarioMonitores {
 	}
 
 	public void permutarEntrada(){//hay que generar una permutación n!
+		//System.out.println("La cantidad a permutar es: " + cantidadMonitores);
+
+		List<String> lista=new ArrayList<String>();
+		for (int m=1; m<=cantidadMonitores; m++) {
+
+			lista.add(Integer.toString(m));			
+		}
+		Combinar comb=new Combinar(lista);
+		//System.out.println(comb.Ar());
 
 	}
 

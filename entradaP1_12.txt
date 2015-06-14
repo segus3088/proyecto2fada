@@ -1,0 +1,13 @@
+12
+Monitor1 1 4
+Monitor2 6 9
+Monitor3 11 13
+Monitor4 15 19
+Monitor5 6 15
+Monitor6 14 22
+Monitor7 0 9
+Monitor8 12 21
+Monitor9 11 20
+Monitor10 20 24
+Monitor11 6 7
+Monitor12 8 11
