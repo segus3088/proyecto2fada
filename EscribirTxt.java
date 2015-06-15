@@ -11,7 +11,7 @@ public class EscribirTxt {
 			archivo = new FileWriter(nombreArchivo);
 			pWrite = new PrintWriter(archivo);
 
-			pWrite.println("Aquí va l del archivo " + campoSalida);
+			pWrite.println(campoSalida);// este es el encargado de escribir lo que hay en el archivo 
 
 
 		} catch (Exception e) {

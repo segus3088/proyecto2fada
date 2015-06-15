@@ -5,6 +5,9 @@ import java.io.File;
 
 public class Escritores {
 
+	private int cantidadEscritores = 0;
+	private int cantidadLibros = 0;
+
 
 
 	public static void main(String argEntrada[]){// la manera de usarlo es java Escritores entrada.txt lo cuales es que recive el nombre de en argEntrada
@@ -37,12 +40,22 @@ public class Escritores {
  
 				String sCurrentLine;//String Linea Actual
 				int largoLinea;
+
+				String primeraLinea = bufercito.readLine();
+				String[] partesPrimeraLinea = primeraLinea.split(" ");
+
+				cantidadEscritores = Integer.parseInt(partesPrimeraLinea[0]);
+				cantidadLibros = Integer.parseInt(partesPrimeraLinea[1]);
+
+				for (int i=0; i<cantidadLibros; i++) {
+					
+				}
 	 
 				while ((sCurrentLine = bufercito.readLine()) != null) {
 					System.out.println(sCurrentLine);
 					largoLinea = sCurrentLine.length();
 
-					System.out.println(largoLinea);
+					//System.out.println(largoLinea);
 				}
  
 			} catch (IOException e) {

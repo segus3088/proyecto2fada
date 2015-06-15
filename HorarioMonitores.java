@@ -34,8 +34,9 @@ public class HorarioMonitores {
 		HorarioMonitores arrancar = new HorarioMonitores();	
 
 		arrancar.leerArchivo(nombreArchivo);
-		arrancar.permutarEntrada();
+		//arrancar.permutarEntrada();
 
+		arrancar.ingenua();
 		arrancar.avara();
 		arrancar.dinamica();
 
@@ -103,13 +104,33 @@ public class HorarioMonitores {
 	}
 
 	public void ingenua(){
+		this.permutarEntrada();
 
 	}
 
 	public void avara(){
-		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida ");
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Avara ");
 		EscribirTxt resultado = new EscribirTxt();
-		salidaTexto = JOptionPane.showInputDialog(null, "Escriba lo que quiere que este en la salida del texto");
+
+		int costoMayor = 0;
+		int monitorMayor = 0;
+
+		for (int i=0; i < cantidadMonitores; i++){
+			System.out.println(costoMayor);
+			if (monitoresTurnos[i].getTotalTurno() > costoMayor) {
+				monitorMayor = i;
+				costoMayor = monitoresTurnos[i].getTotalTurno();
+				System.out.println("Despues de cosito " + monitoresTurnos[i].getTotalTurno());
+			}
+
+		}
+
+		salidaTexto = "1";
+		salidaTexto += "\n";
+		salidaTexto += monitoresTurnos[monitorMayor].getTotalTurno();
+		salidaTexto += "\n";
+		salidaTexto += monitoresTurnos[monitorMayor].getNombre();
+		//salidaTexto = JOptionPane.showInputDialog(null, "Escriba lo que quiere que este en la salida del texto");
 		resultado.setCampoSalida(salidaTexto);
 		resultado.escribirArchivo(nombreArSalida);
 
