@@ -105,6 +105,12 @@ public class HorarioMonitores {
 
 	public void ingenua(){
 		this.permutarEntrada();
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Ingenua ");
+		EscribirTxt resultado = new EscribirTxt();
+
+		//Esta parte es la que escribe el txt
+		resultado.setCampoSalida(salidaTexto);
+		resultado.escribirArchivo(nombreArSalida);
 
 	}
 
@@ -138,6 +144,18 @@ public class HorarioMonitores {
 	}
 
 	public void dinamica(){
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Dinamica ");
+		EscribirTxt resultado = new EscribirTxt();
+
+		// Inicio Algoritmo
+
+
+		//Fin Algoritmo
+
+
+		//Esta parte es la que escribe el txt
+		resultado.setCampoSalida(salidaTexto);
+		resultado.escribirArchivo(nombreArSalida);
 		
 	}
 
