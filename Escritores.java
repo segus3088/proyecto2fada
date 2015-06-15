@@ -113,6 +113,12 @@ public class Escritores {
 		int promedioLibros = Math.round(cantidadLibros/cantidadEscritores);
 		int[] costoEscritores = new int[cantidadEscritores];
 
+		int tmpCantidadEscritores = cantidadEscritores;
+
+		for (int i=0; i < cantidadLibros; i++) {
+
+		}
+
 
 		//Fin Algoritmo
 
