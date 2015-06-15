@@ -110,6 +110,9 @@ public class Escritores {
 
 		// Inicio Algoritmo
 
+		int promedioLibros = Math.round(cantidadLibros/cantidadEscritores);
+		int[] costoEscritores = new int[cantidadEscritores];
+
 
 		//Fin Algoritmo
 
@@ -125,6 +128,7 @@ public class Escritores {
 		EscribirTxt resultado = new EscribirTxt();
 
 		// Inicio Algoritmo
+
 
 
 		//Fin Algoritmo
