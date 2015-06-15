@@ -9,6 +9,7 @@ public class Escritores {
 
 	private int cantidadEscritores = 0;
 	private int cantidadLibros = 0;
+	private int mayorDays = 0;
 
 	private Libro[] librosRedactar;
 
@@ -65,6 +66,13 @@ public class Escritores {
 					librosRedactar[i] = libroTmp;
 
 				}
+
+				//Verificar si los escritores es mayor a los libros
+				if (cantidadLibros <= cantidadEscritores) {
+					this.respuestaMuchosEscritores();	
+				}
+
+				//Llama a la solución minima
 
 				/*
 	 
@@ -128,10 +136,26 @@ public class Escritores {
 
 	}
 
-	public void respuestaMuchosEscritores(){nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de muchosEscritores ");
+	public void respuestaMuchosEscritores(){
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de muchosEscritores ");
 		EscribirTxt resultado = new EscribirTxt();
 
 		// Inicio Algoritmo
+		mayorDays = 0;
+
+		for (int i=0; i<cantidadLibros; i++) {
+			if (librosRedactar[i].getPaginas() > mayorDays) {
+				mayorDays = librosRedactar[i].getPaginas();							
+			}			
+		}
+
+		salidaTexto = Integer.toString(mayorDays);
+		//salidaTexto += "\n";
+
+		for (int i=0; i < cantidadLibros; i++) {
+			salidaTexto	+= "\n";
+			salidaTexto += ("L" + i);
+		}
 
 
 		//Fin Algoritmo
@@ -140,6 +164,8 @@ public class Escritores {
 		//Esta parte es la que escribe el txt
 		resultado.setCampoSalida(salidaTexto);
 		resultado.escribirArchivo(nombreArSalida);
+
+		System.exit(0);
 
 	}
 
