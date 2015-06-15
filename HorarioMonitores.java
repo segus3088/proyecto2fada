@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 import java.util.*;
+import javax.swing.*;
 
 public class HorarioMonitores {
 
@@ -13,6 +14,7 @@ public class HorarioMonitores {
 
 	private Monitores[] monitoresTurnos;
 
+	private String nombreArSalida, salidaTexto; // para almacenar el arvhio de salida 
 	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
 		if(argEntrada.length == 0){
@@ -105,6 +107,12 @@ public class HorarioMonitores {
 	}
 
 	public void avara(){
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida ");
+		EscribirTxt resultado = new EscribirTxt();
+		salidaTexto = JOptionPane.showInputDialog(null, "Escriba lo que quiere que este en la salida del texto");
+		resultado.setCampoSalida(salidaTexto);
+		resultado.escribirArchivo(nombreArSalida);
+
 
 	}
 
