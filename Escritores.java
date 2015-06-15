@@ -26,6 +26,10 @@ public class Escritores {
 		Escritores arrancar = new Escritores();	
 
 		arrancar.leerArchivo(nombreArchivo);
+
+		arrancar.ingenua();
+		arrancar.dinamica();
+		arrancar.avara()
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
@@ -44,6 +48,18 @@ public class Escritores {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
+	}
+
+	public void ingenua(){
+
+	}
+
+	public void avara(){
+
+	}
+
+	public void dinamica(){
+
 	}
 
 }

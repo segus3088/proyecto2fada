@@ -34,6 +34,9 @@ public class HorarioMonitores {
 		arrancar.leerArchivo(nombreArchivo);
 		arrancar.permutarEntrada();
 
+		arrancar.avara();
+		arrancar.dinamica();
+
 	}
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
@@ -95,6 +98,18 @@ public class HorarioMonitores {
 		Combinar comb=new Combinar(lista);
 		//System.out.println(comb.Ar());
 
+	}
+
+	public void ingenua(){
+
+	}
+
+	public void avara(){
+
+	}
+
+	public void dinamica(){
+		
 	}
 
 }
