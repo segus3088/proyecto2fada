@@ -7,6 +7,8 @@ public class Monitores {
 	private int horaFin = 0;
 	private int totalTurno = 0;
 
+	private int[] horaOcupada = new int[24];// esto es para colocar un 0 si no esta ocupado y 1 por si esta ocupado
+
 	public void setNombre(String nombreNuevo){
 		this.nombre = nombreNuevo;
 	}
