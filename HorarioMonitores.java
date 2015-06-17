@@ -97,6 +97,16 @@ public class HorarioMonitores {
 		return false;
 	}
 
+	public int[] sumarEntradas(int[] entradaUno, int[] entradaDos){
+		int[] tmpSuma = new int[24];
+
+		for (int i=0; i<24; i++) {
+			tmpSuma[i] = entradaUno[i] + entradaDos[i];
+		}
+
+		return tmpSuma;
+	}
+
 	public void permutarEntrada(){//hay que generar una permutación n!
 		//System.out.println("La cantidad a permutar es: " + cantidadMonitores);
 
@@ -114,6 +124,11 @@ public class HorarioMonitores {
 		this.permutarEntrada();
 		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Ingenua ");
 		EscribirTxt resultado = new EscribirTxt();
+
+		// Inicio Algoritmo
+
+
+		//Fin Algoritmo
 
 		//Esta parte es la que escribe el txt
 		resultado.setCampoSalida(salidaTexto);
