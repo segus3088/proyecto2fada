@@ -122,7 +122,7 @@ public class HorarioMonitores {
 		int monitorMayor = 0;
 
 		for (int i=0; i < cantidadMonitores; i++){
-			System.out.println(costoMayor);
+			System.out.println("Mejor tiempo ahora: " + costoMayor);
 			if (monitoresTurnos[i].getTotalTurno() > costoMayor) {
 				monitorMayor = i;
 				costoMayor = monitoresTurnos[i].getTotalTurno();

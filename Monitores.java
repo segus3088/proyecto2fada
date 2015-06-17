@@ -23,6 +23,26 @@ public class Monitores {
 
 	public void setTotalTurno(){
 		this.totalTurno = this.horaFin - this.horaInicio;
+		this.setHoraOcupada();
+	}
+
+	public void setHoraOcupada(){
+		int[] tmpInt = new int[24];
+
+		for (int i = 0; i<24; i++) {//con esto inicializo en 0 antes de colocar los que le corresponden
+			tmpInt[i]=0;
+		}
+
+		for (int i = this.horaInicio; i < horaFin; i++) {//voy colocando los unos a las horas ocupadas
+			tmpInt[i] = 1;			
+		}
+
+		this.horaOcupada = tmpInt;
+		System.out.println(this.nombre);
+
+		for(int i = 0; i<24; i++){//probar como quedo
+			System.out.println(this.horaOcupada[i] + "En la hora " + i);
+		}
 	}
 
 	public String getNombre(){
@@ -40,4 +60,9 @@ public class Monitores {
 	public int getTotalTurno(){
 		return this.totalTurno;
 	}
+
+	public int[] getHoraOcupada(){
+		return this.horaOcupada;
+	}
+
 }
