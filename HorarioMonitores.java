@@ -39,6 +39,7 @@ public class HorarioMonitores {
 		arrancar.ingenua();
 		arrancar.avara();
 		arrancar.dinamica();
+		arrancar.sumaPermutaciones();
 
 	}
 
@@ -179,6 +180,26 @@ public class HorarioMonitores {
 		resultado.setCampoSalida(salidaTexto);
 		resultado.escribirArchivo(nombreArSalida);
 		
+	}
+
+	public void sumaPermutaciones(){
+
+		List<String> listaTmp = new ArrayList<String>(); //para almacenar la permutaci temp
+
+		for (int i=0; i < cantidadMonitores; i++) {//el principal
+
+			for (int j=0; j< cantidadMonitores-1; j++) {//cantidad que le voy a sumar
+
+				while( )
+
+				for (int k=i+1; k < cantidadMonitores; k++) {//lo que le voy a sumar
+
+					System.out.println(" El i " + i + " el j " + j + " el k " + k);					
+				}
+
+			}			
+		}
+
 	}
 
 }
