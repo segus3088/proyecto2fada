@@ -123,7 +123,7 @@ public class HorarioMonitores {
 
 	public void ingenua(){
 		this.permutarEntrada();
-		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Ingenua ");
+		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba cómo quiere llamar el archivo de salida de Ingenua ");
 		EscribirTxt resultado = new EscribirTxt();
 
 		// Inicio Algoritmo
