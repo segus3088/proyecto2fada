@@ -85,7 +85,14 @@ public class HorarioMonitores {
 			} 
 	}
 
-	public boolean verifciarCruce(){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
+	public boolean verifciarCruce(int[] entradaEvaluar){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
+
+		for (int i=0; i<24; i++) {//esto hace el recorrido por la parte de ocupación y si hay un lugar que sume mas de 1 se cruza
+
+			if(entradaEvaluar[i] > 1){
+				return true;
+			}			
+		}
 
 		return false;
 	}
