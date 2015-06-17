@@ -14,11 +14,11 @@ public class HorarioMonitores {
 
 	private Monitores[] monitoresTurnos;
 
-	private String nombreArSalida, salidaTexto; // para almacenar el arvhio de salida 
+	private String nombreArSalida, salidaTexto; // para almacenar el arvhio de salida
 	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
 
 		if(argEntrada.length == 0){
-			System.out.println("No puede ser vacio");
+			System.out.println("No puede ser vacío");
 			System.exit(0);
 		}
 
@@ -31,7 +31,7 @@ public class HorarioMonitores {
 
 		//System.out.println(nombreArchivo);
 
-		HorarioMonitores arrancar = new HorarioMonitores();	
+		HorarioMonitores arrancar = new HorarioMonitores();
 
 		arrancar.leerArchivo(nombreArchivo);
 		//arrancar.permutarEntrada();
@@ -44,10 +44,10 @@ public class HorarioMonitores {
 
 	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
 			try (BufferedReader bufersito = new BufferedReader(new FileReader(nEntrada))){
- 
+
 				String sCurrentLine;// String Linea actual
-	 
-				/*while 
+
+				/*while
 				((sCurrentLine = bufersito.readLine()) != null) {
 					System.out.println(sCurrentLine);
 				}*/
@@ -60,12 +60,12 @@ public class HorarioMonitores {
 				//ahora para leer las siguiente n lineas con los monitores
 				for (int i=0; i< cantidadMonitores; i++) {
 					sCurrentLine = bufersito.readLine();
-					//System.out.println("El monitor leido es: " + sCurrentLine);	
+					//System.out.println("El monitor leido es: " + sCurrentLine);
 
 					//Ingresando los datos del monitor
-					String[] partesLines = sCurrentLine.split(" ");			
+					String[] partesLines = sCurrentLine.split(" ");
 
-					
+
 					Monitores objetoTemporal = new Monitores();
 					objetoTemporal.setNombre(partesLines[0]);
 					objetoTemporal.setHoraInicio(Integer.parseInt(partesLines[1]));
@@ -73,16 +73,16 @@ public class HorarioMonitores {
 					objetoTemporal.setTotalTurno();
 
 					monitoresTurnos[i] = objetoTemporal;
-					
-				
+
+
 					//Se finaliza el procezamiento del archivo
-					//System.out.println("El nombre es: "+ monitoresTurnos[i].getNombre() + " Empieza a las " + monitoresTurnos[i].getHoraInicio() + "h y dura " +  monitoresTurnos[i].getTotalTurno());		
+					//System.out.println("El nombre es: "+ monitoresTurnos[i].getNombre() + " Empieza a las " + monitoresTurnos[i].getHoraInicio() + "h y dura " +  monitoresTurnos[i].getTotalTurno());
 				}
 
- 
+
 			} catch (IOException e) {
 				e.printStackTrace();
-			} 
+			}
 	}
 
 	public boolean verifciarCruce(int[] entradaEvaluar){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
@@ -91,7 +91,7 @@ public class HorarioMonitores {
 
 			if(entradaEvaluar[i] > 1){
 				return true;
-			}			
+			}
 		}
 
 		return false;
@@ -103,7 +103,7 @@ public class HorarioMonitores {
 		List<String> lista=new ArrayList<String>();
 		for (int m=1; m<=cantidadMonitores; m++) {
 
-			lista.add(Integer.toString(m));			
+			lista.add(Integer.toString(m));
 		}
 		Combinar comb=new Combinar(lista);
 		//System.out.println(comb.Ar());
@@ -133,7 +133,7 @@ public class HorarioMonitores {
 			if (monitoresTurnos[i].getTotalTurno() > costoMayor) {
 				monitorMayor = i;
 				costoMayor = monitoresTurnos[i].getTotalTurno();
-				System.out.println("Despues de cosito " + monitoresTurnos[i].getTotalTurno());
+				System.out.println("Después de cosito " + monitoresTurnos[i].getTotalTurno());
 			}
 
 		}
@@ -163,7 +163,7 @@ public class HorarioMonitores {
 		//Esta parte es la que escribe el txt
 		resultado.setCampoSalida(salidaTexto);
 		resultado.escribirArchivo(nombreArSalida);
-		
+
 	}
 
 }
