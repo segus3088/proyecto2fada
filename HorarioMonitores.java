@@ -122,11 +122,41 @@ public class HorarioMonitores {
 	}
 
 	public void ingenua(){
-		this.permutarEntrada();
+		//this.permutarEntrada();
 		nombreArSalida= JOptionPane.showInputDialog(null, "Escriba como quiere llamar el archivo de salida de Ingenua ");
 		EscribirTxt resultado = new EscribirTxt();
 
 		// Inicio Algoritmo
+
+		/*for (int k= 0; k< cantidadMonitores ; k++) {
+			
+		System.out.println("Cambiando k" + k);
+
+			for (int i = k; i<= cantidadMonitores; i++) {
+				System.out.println("Como va i "+ i);
+				this.combinaciones(cantidadMonitores, i, k);
+				
+			}
+
+		}*/
+
+		int[] monitorePermutado = new int[cantidadMonitores];
+
+		for (int i=0; i< cantidadMonitores; i++) {
+			monitorePermutado[i]=i;
+			
+		}
+
+		//empiezo lo de la permutation
+		int r = monitorePermutado.length;
+
+		for (int n=1; n<cantidadMonitores; n++) {//esto es la cantidad que va ir eligiendo, primero 
+			
+		}
+
+		//fin la permutation
+
+		
 
 
 		//Fin Algoritmo
@@ -182,9 +212,9 @@ public class HorarioMonitores {
 
 	}
 
-	public void sumaPermutaciones(){
+	public void sumaPermutaciones(){//tener en cuenta que puedo hace la combinatoria de a grupos
 
-		List<String> listaTmp = new ArrayList<String>(); //para almacenar la permutaci temp
+		/*List<String> listaTmp = new ArrayList<String>(); //para almacenar la permutaci temp
 
 		for (int i=0; i < cantidadMonitores; i++) {//el principal
 
@@ -198,8 +228,67 @@ public class HorarioMonitores {
 				}
 
 			}			
-		}
+		}*/
+
+		//Inicio combinatoria
+		//formula n!(n-i)
+
+		/*int i = 0, j = 0, ci = 0;
+        int v[] = new int[n];
+        double p1=0;
+
+
+        for(i = 0; i < n; i++)
+        { v[i]=i; }
+
+        escribe(v, r);
+        ci++;
+        while(ci < p1)
+        {
+            i = r - 1;
+            while (v[i] == n - r + i) { i--; }
+                   
+            v[i] = v[i] + 1;
+            for (j = i + 1; j < r; j++) { v[j] = v[i] + j - i; }
+            escribe(v,r);
+            ci++;
+        }*/
+
+		//Fin
 
 	}
+
+	public void combinaciones(int n, int r){
+        int i = 0, j = 0, ci = 0;
+        double p1=0;
+
+        int v[] = new int[n];
+
+        for(i = 0; i < n; i++)
+        { v[i]=i; }
+
+        escribe(v, r);
+        ci++;
+        while(ci < p1)
+        {
+            i = r - 1;
+            while (v[i] == n - r + i) { i--; }
+                   
+            v[i] = v[i] + 1;
+            for (j = i + 1; j < r; j++) { v[j] = v[i] + j - i; }
+            escribe(v,r);
+            ci++;
+        }
+	}
+
+	public void escribe(int v[],int r){
+		for(int i=0;i<r;i++) {
+			System.out.println(v[i]);
+		}
+		System.out.println("-");
+	}
+
+	public void permutaRepitiendo(int )
+
 
 }
