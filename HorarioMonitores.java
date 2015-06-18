@@ -11,6 +11,7 @@ public class HorarioMonitores {
 	private int tiempoDisponible = 0;
 	private int cantidadMonitores = 0;
 	private int[] respuestaTemporal;// este lo uso para guardar la posición de los proibles monnitreos que puede servir
+	private String resputaIngenua;
 
 	private int[] tiempoTemporalOcupado = new int[24];
 
@@ -164,6 +165,22 @@ public class HorarioMonitores {
 		//}
 
 		//fin la permutation
+
+		//trabando ya con la major salida
+		String[] tmpRespustaIngenua = resputaIngenua.split(" ");
+		int cantidadMonitoresParaIngenua = tmpRespustaIngenua.length;
+
+		salidaTexto = Integer.toString(cantidadMonitoresParaIngenua);
+		salidaTexto += "\n";
+		salidaTexto += Integer.toString(tiempoDisponible);
+		salidaTexto += "\n";
+
+		for (int i=0; i<cantidadMonitoresParaIngenua; i++) {
+			int nombreMoni = Integer.parseInt(tmpRespustaIngenua[i]);
+			//System.out.println(monitoresTurnos[nombreMoni].getNombre());
+			salidaTexto += monitoresTurnos[nombreMoni].getNombre();
+			salidaTexto += "\n";			
+		}
 
 		
 
@@ -326,7 +343,16 @@ public class HorarioMonitores {
 	        //tiempoTemporalOcupado = this.sumarEntradas(tiempoTemporalOcupado + monitoresTurnos[y].getHoraOcupada());
 	        if (!(this.verifciarCruce(tiempoTemporalOcupado))) {
 	        	System.out.println("Se puede usar este: " + act); 
-	        	//System.out.println(act);       	
+	        	//System.out.println(act);
+	        	//deberia colocar para que verifique desde este parte
+
+	        	int tmpTiempoDisponible = sumarDisponibilidad(tiempoTemporalOcupado);
+
+	        	if(tmpTiempoDisponible > tiempoDisponible){
+	        		tiempoDisponible = tmpTiempoDisponible;
+
+	        		resputaIngenua = act;
+	        	}       	
 	        }
 
 	        /*for (int i=0; i < 24 ; i++) {//para verificar lo que esta en tiempoTemporal
