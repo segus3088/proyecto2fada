@@ -12,6 +12,8 @@ public class HorarioMonitores {
 	private int cantidadMonitores = 0;
 	private int[] respuestaTemporal;// este lo uso para guardar la posición de los proibles monnitreos que puede servir
 
+	private int[] tiempoTemporalOcupado = new int[24];
+
 	private Monitores[] monitoresTurnos;
 
 	private String nombreArSalida, salidaTexto; // para almacenar el arvhio de salida
@@ -128,6 +130,12 @@ public class HorarioMonitores {
 
 		// Inicio Algoritmo
 
+		//inicializandoTemporalOcupado
+		/*for (int t=0; t<24 ; t++) {//incializando en ceros la respuesta temporal
+			tiempoTemporalOcupado[t] = 0;
+			
+		}*/
+
 		/*for (int k= 0; k< cantidadMonitores ; k++) {
 			
 		System.out.println("Cambiando k" + k);
@@ -150,9 +158,10 @@ public class HorarioMonitores {
 		//empiezo lo de la permutation
 		int r = monitorePermutado.length;
 
-		for (int n=1; n<cantidadMonitores; n++) {//esto es la cantidad que va ir eligiendo, primero 
+		//for (int n=1; n<cantidadMonitores; n++) {//esto es la cantidad que va ir eligiendo, primero 1 hasta la totoralidad
+			permutaRepitiendo(monitorePermutado, "", cantidadMonitores, r);
 			
-		}
+		//}
 
 		//fin la permutation
 
@@ -288,7 +297,63 @@ public class HorarioMonitores {
 		System.out.println("-");
 	}
 
-	public void permutaRepitiendo(int )
+	public void permutaRepitiendo(int[] elem, String act, int n, int r){
+		//System.out.println(act);
+
+		for (int t=0; t<24 ; t++) {//incializando en ceros la respuesta temporal
+			tiempoTemporalOcupado[t] = 0;
+			
+		}
+
+		if (act!="") {
+			
+			//System.out.println("si esta entrando");
+
+	        String[] partecitas = act.split(" ");
+	        int[] tmpParaEvaluar = new int[partecitas.length];
+
+	        //colocando las parte
+
+	        for (int k=0; k<partecitas.length; k++) {
+	        	tmpParaEvaluar[k]= Integer.parseInt(partecitas[k]);
+	        }
+
+	        for (int y=0; y<partecitas.length; y++) {//para hacer las suma de lo que esta dentro
+	        	int elMonitor = Integer.parseInt(partecitas[y]);
+	        	tiempoTemporalOcupado = this.sumarEntradas(tiempoTemporalOcupado, monitoresTurnos[elMonitor].getHoraOcupada());
+	        }
+
+	        //tiempoTemporalOcupado = this.sumarEntradas(tiempoTemporalOcupado + monitoresTurnos[y].getHoraOcupada());
+	        if (!(this.verifciarCruce(tiempoTemporalOcupado))) {
+	        	System.out.println("Se puede usar este: " + act); 
+	        	//System.out.println(act);       	
+	        }
+
+	        /*for (int i=0; i < 24 ; i++) {//para verificar lo que esta en tiempoTemporal
+	        	System.out.println(tiempoTemporalOcupado[i] + "en la hora");
+	        	
+	        }*/
+
+	    }
+
+        //fin de colocar las partes
+
+        //System.out.println(partecitas.length + "tamaño");
+
+        //done deveria ccolora
+        if (n == 0) {
+            //System.out.println(act + "hola");
+        } else {
+            //System.out.println(act + " yo");
+            for (int i = 0; i < r; i++) {
+                if (!act.contains(Integer.toString(elem[i]))) { // Controla que no haya repeticiones
+                    permutaRepitiendo(elem, act + elem[i] + " ", n - 1, r);
+                }
+            }
+        }
+
+    	
+	}
 
 
 }
