@@ -358,8 +358,7 @@ public class HorarioMonitores {
 	public int sumarDisponibilidad(int[] laSuma){
 		int salida = 0;
 		for (int i=0; i<24; i++) {
-			salida += laSuma[i];
-
+			salida += laSuma[i]; 
 		}
 
 		return salida;
