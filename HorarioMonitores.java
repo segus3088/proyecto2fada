@@ -17,8 +17,8 @@ public class HorarioMonitores {
 
 	private Monitores[] monitoresTurnos;
 
-	private String nombreArSalida, salidaTexto; // para almacenar el arvhio de salida
-	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recive el nombre de en argEntrada
+	private String nombreArSalida, salidaTexto; // para almacenar el archivo de salida
+	public static void main(String argEntrada[]){// la manera de usarlo es java HorarioMonitores entrada.txt lo cuales es que recibe el nombre en argEntrada
 
 		if(argEntrada.length == 0){
 			System.out.println("No puede ser vacío");
@@ -46,25 +46,25 @@ public class HorarioMonitores {
 
 	}
 
-	public void leerArchivo(String nEntrada){ //aqu´i le paso el nombre que recibi como parametro
+	public void leerArchivo(String nEntrada){ //aquí le paso el nombre que recibí como parametro
 			try (BufferedReader bufersito = new BufferedReader(new FileReader(nEntrada))){
 
-				String sCurrentLine;// String Linea actual
+				String sCurrentLine;// String Línea actual
 
 				/*while
 				((sCurrentLine = bufersito.readLine()) != null) {
 					System.out.println(sCurrentLine);
 				}*/
 				cantidadMonitores = Integer.parseInt(bufersito.readLine());// lo convierto en entero para poder usarlo
-				//System.out.println("La Cantidad de monitores leida es: " + cantidadMonitores);
+				//System.out.println("La Cantidad de monitores leída es: " + cantidadMonitores);
 
 				//Crear el array de Monitores
 				monitoresTurnos = new Monitores[cantidadMonitores];
 
-				//ahora para leer las siguiente n lineas con los monitores
+				//ahora para leer las siguiente n líneas con los monitores
 				for (int i=0; i< cantidadMonitores; i++) {
 					sCurrentLine = bufersito.readLine();
-					//System.out.println("El monitor leido es: " + sCurrentLine);
+					//System.out.println("El monitor leído es: " + sCurrentLine);
 
 					//Ingresando los datos del monitor
 					String[] partesLines = sCurrentLine.split(" ");
@@ -89,7 +89,7 @@ public class HorarioMonitores {
 			}
 	}
 
-	public boolean verifciarCruce(int[] entradaEvaluar){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
+	public boolean verificarCruce(int[] entradaEvaluar){// aquí tengo que verificar si en la permutación sin repetir hay un cruce
 
 		for (int i=0; i<24; i++) {//esto hace el recorrido por la parte de ocupación y si hay un lugar que sume mas de 1 se cruza
 
@@ -250,9 +250,10 @@ public class HorarioMonitores {
 
 				for (int k=i+1; k < cantidadMonitores; k++) {//lo que le voy a sumar
 
-					System.out.println(" El i " + i + " el j " + j + " el k " + k);					
+					System.out.println(" El i " + i + " el j " + j + " el k " + k);
 				}
 
+<<<<<<< HEAD
 			}			
 		}*/
 
@@ -320,6 +321,9 @@ public class HorarioMonitores {
 		for (int t=0; t<24 ; t++) {//incializando en ceros la respuesta temporal
 			tiempoTemporalOcupado[t] = 0;
 			
+=======
+			}
+>>>>>>> 5a3f6eacf26181eb55e49f8652207c3092711262
 		}
 
 		if (act!="") {
